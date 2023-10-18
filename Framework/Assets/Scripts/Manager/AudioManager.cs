@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManagerBase : MonoBehaviour
+public class AudioManager : ManagerBase
 {
-    public virtual void Init() { }
+
 }

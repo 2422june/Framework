@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Define : MonoBehaviour
+//게임 전체에서 활용될 수 있는 enum, struct, const를 저장합니다.
+public class Define
 {
-    // Start is called before the first frame update
-    void Start()
+    public struct UIData
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public string name;
+        public GameObject gameObject;
+        public UnityEngine.Object component;
     }
 }

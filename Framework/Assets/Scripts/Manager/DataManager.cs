@@ -16,7 +16,7 @@ public class Data
     public List<Card> cards = new List<Card>();
 }
 
-public class DataManager : MonoBehaviour
+public class DataManager : ManagerBase
 {
     private void Start()
     {

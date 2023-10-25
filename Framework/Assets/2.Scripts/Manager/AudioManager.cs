@@ -101,7 +101,7 @@ public class AudioManager : ManagerBase
     public void PlayBGM()
     {
         if (_isSilence)
-            return; 
+            return;
 
         _bgmSource.Play();
     }

@@ -6,20 +6,16 @@ using UnityEngine.UI;
 public class LoadScene : SceneBase
 {
     private float _speed;
+    //[SerializeField]
     private Slider loadBar;
 
-
-    private void Start()
-    {
-        Init();
-        InitUI();
-    }
-
-    protected override void Init()
+    public override void Init()
     {
         _type = Define.Scene.Load;
         _name = "Load";
+        _scene = gameObject;
         _speed = 100f / Managers.Scene.GetLoadTime();
+        InitUI();
     }
 
     protected override void InitUI()
@@ -52,5 +48,10 @@ public class LoadScene : SceneBase
         Managers.UI.Clear();
         Managers.Scene.OnLoad();
         Managers.Scene.LoadScene();
+    }
+
+    public override void StartLoad()
+    {
+        OnLoad();
     }
 }

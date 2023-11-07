@@ -9,7 +9,8 @@ using SM = UnityEngine.SceneManagement.SceneManager;
 
 public class SceneManager : ManagerBase
 {
-    private SceneBase _scene;
+    [SerializeField]
+    private List<SceneBase> scenes = new List<SceneBase>();
     private Define.Scene _nextScene;
     private float _loadingTime;
     private bool _onLoading;
@@ -18,6 +19,10 @@ public class SceneManager : ManagerBase
     {
         _onLoading = false;
         _loadingTime = 3;
+        for (int i = 0; i < scenes.Count; i++)
+        {
+            scenes[i].Init();
+        }
     }
 
     public void LoadScene(Define.Scene scene = Define.Scene.Load)
@@ -51,7 +56,6 @@ public class SceneManager : ManagerBase
 
     public void OnLoad(SceneBase scene)
     {
-        _scene = scene;
         _onLoading = true;
     }
 }
